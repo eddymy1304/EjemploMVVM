@@ -1,8 +1,10 @@
 package com.example.ejemplomvvm.data.model
 
-class CitaProvider {
+import javax.inject.Inject
+import javax.inject.Singleton
 
-    companion object {
-        var listaDeCitas = mutableListOf<CitaModel>()
-    }
+//Unica instancia
+@Singleton
+class CitaProvider @Inject constructor() {
+    var listaDeCitas = mutableListOf<CitaModel>()
 }

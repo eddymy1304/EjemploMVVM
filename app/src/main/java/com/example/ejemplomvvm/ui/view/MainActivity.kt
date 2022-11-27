@@ -2,13 +2,13 @@ package com.example.ejemplomvvm.ui.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.LayoutInflater
 import androidx.activity.viewModels
 import androidx.core.view.isVisible
-import androidx.viewbinding.ViewBinding
 import com.example.ejemplomvvm.databinding.ActivityMainBinding
 import com.example.ejemplomvvm.ui.viewmodel.CitaViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     private lateinit var binding:ActivityMainBinding
 

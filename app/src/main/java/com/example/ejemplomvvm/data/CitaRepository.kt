@@ -3,14 +3,17 @@ package com.example.ejemplomvvm.data
 import com.example.ejemplomvvm.data.model.CitaModel
 import com.example.ejemplomvvm.data.model.CitaProvider
 import com.example.ejemplomvvm.data.network.CitaService
+import javax.inject.Inject
 
-class CitaRepository {
+class CitaRepository @Inject constructor(
+    private val api: CitaService,
+    private val citasProvider: CitaProvider
+) {
 
-    private val api = CitaService()
 
-    suspend fun getCitas():MutableList<CitaModel> {
+    suspend fun getCitas(): MutableList<CitaModel> {
         val response = api.getCitas()
-        CitaProvider.listaDeCitas = response
+        citasProvider.listaDeCitas = response
         return response
     }
 }
